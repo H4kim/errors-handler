@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-mongoose-jwt-error-handler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/H4kim/nodejs-mongoose-jwt-error-handler.git"
+  },
+  "keywords": [
+    "errors handling",
+    "errors handler nodejs",
+    "errors handler expressjs",
+    "errors handler mongoose",
+    "errors handler jwt",
+    "errors handler nodejs"
+  ],
+  "author": "Hakim Bencella",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/H4kim/nodejs-mongoose-jwt-error-handler/issues"
+  },
+  "homepage": "https://github.com/H4kim/nodejs-mongoose-jwt-error-handler#readme"
+}
