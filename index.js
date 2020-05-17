@@ -4,20 +4,19 @@ const AppError = require('./appError');
 const handleExpiredError = () => new AppError('Token expired , please login again', 401)
 const handleJwtError = () => new AppError('Invalid token , please login again', 401)
 
-//handel  CastErros  (invalid id , ...)
+
+//Mongoose Errors
 const handleCastErrorDB = err => {
     const message = `Invalid ${err.path} : ${err.value}`;
     return new AppError(message, 400)
 }
 
-//handel duplicate tour name error
 const handleMongoErrorDB = (err) => {
     const value = err.errmsg.match(/"(.*?)"/)[0];
     const message = `Duplicate field value :  ${value}. please choose anothor value`
     return new AppError(message, 400)
 }
 
-//handle Validation Errors 
 const handleValidationErrorDB = (err) => {
     const { message } = err
     return new AppError(message, 400)
@@ -45,7 +44,6 @@ const sendErrorProduction = (err, req, res) => {
         }
         //if not operational send a generic message without inforamation (third package libray errors , ....)
         else {
-            //) log the error in the server log 💻 
             console.error('ERROR 💥', err)
             res.status(500).json({
                 status: 'Error',
