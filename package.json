@@ -9,12 +9,14 @@
     "url": "git+https://github.com/H4kim/nodejs-mongoose-jwt-error-handler.git"
   },
   "keywords": [
-    "errors handling",
-    "errors handler nodejs",
-    "errors handler expressjs",
-    "errors handler mongoose",
-    "errors handler jwt",
-    "errors handler nodejs"
+    "error handling",
+    "error handler",
+    "node error handler",
+    "express error handler ",
+    "mongoose error handler",
+    "jwt error handle",
+    "node js",
+    "express js"
   ],
   "author": "Hakim Bencella",
   "license": "ISC",
