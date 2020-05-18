@@ -19,6 +19,7 @@ For now i use it for my self , it's very usefull but there is messings errors , 
  ```js
  const  app = express();
  const errorsHandler = require('errors-handler')
+ const sendError = require('errors-handler/appError');
  //don't work without .env with variable NODE_ENV=production/development
  require('dotenv').config(); 
 
@@ -28,7 +29,7 @@ For now i use it for my self , it's very usefull but there is messings errors , 
 app.get('/foo', async (req, res, next) => {
 //Yout code here
 // const doc = await Modal.find();
-  if(!doc) return next(new AppError('error message here' , status code number here) 
+  if(!doc) return next(new sendError('error message here' , status code number here) 
   res.json({
   // your response here
   })
