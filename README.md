@@ -39,7 +39,17 @@ app.get('/foo', async (req, res, next) => {
 app.use(errorsHandler);
  ```
  
+ ## Errors types
+| Error Type |  Error in Production   |
+| ------ | ------------ |
+ CastError | Invalid **path** : **value** |
+ ValidationError | Duplicate field value : **value** . please choose anothor value |
+ JsonWebTokenError | Invalid token , please login again |
+ TokenExpiredError | Token expired , please login again |
+
+
+
  ## Options
- Soon
- 
+ Soon 
+
  
