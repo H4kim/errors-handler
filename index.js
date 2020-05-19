@@ -24,33 +24,33 @@ const handleValidationErrorDB = (err) => {
 
 
 const sendErrorDevelopment = (err, req, res) => {
-    
-        res.status(err.statusCode).json({
-            status: err.status,
-            message: err.message,
-            err: err,
-            stack: err.stack
-        })
+
+    res.status(err.statusCode).json({
+        status: err.status,
+        message: err.message,
+        err: err,
+        stack: err.stack
+    })
 }
 
 
 const sendErrorProduction = (err, req, res) => {
-        if (err.isOperational) {
-            console.error('ERROR 💥', err)
-            res.status(err.statusCode).json({
-                status: err.status,
-                message: err.messages
-            })
-        }
-        //if not operational send a generic message without inforamation (third package libray errors , ....)
-        else {
-            console.error('ERROR 💥', err)
-            res.status(500).json({
-                status: 'Error',
-                message: 'Somthing went wrong',
-            });
-        }
-    
+    if (err.isOperational) {
+        console.error('ERROR 💥', err)
+        res.status(err.statusCode).json({
+            status: err.status,
+            message: err.messages
+        })
+    }
+    //if not operational send a generic message without inforamation (third package libray errors , ....)
+    else {
+        console.error('ERROR 💥', err)
+        res.status(500).json({
+            status: 'Error',
+            message: 'Somthing went wrong',
+        });
+    }
+
 }
 
 
