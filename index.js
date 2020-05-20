@@ -42,11 +42,6 @@ const sendErrorProduction = (err, req, res) => {
             message: err.messages
         })
     }
-
-    /**
-     * If there is only one case to deal with conditional statement,
-     * we should remove it for better readability
-     */
     //if not operational send a generic message without inforamation (third package libray errors , ....)
     console.error('ERROR 💥', err)
     res.status(500).json({
