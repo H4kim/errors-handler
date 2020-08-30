@@ -31,20 +31,6 @@ const sendErrorDevelopment = (err, req, res) => {
 };
 
 const sendErrorProduction = (err, req, res) => {
-  if (err.isOperational) {
-    console.error('ERROR 💥', {
-      error: err,
-      time: new Date(),
-      path: req.path,
-      method: req.method,
-      sourceIp: req.ip,
-    });
-    return res.status(err.statusCode).json({
-      status: err.status,
-      message: err.messages,
-    });
-  }
-  //if not operational send a generic message without inforamation (third package libray errors , ....)
   console.error('ERROR 💥', {
     error: err,
     time: new Date(),
@@ -52,6 +38,13 @@ const sendErrorProduction = (err, req, res) => {
     method: req.method,
     sourceIp: req.ip,
   });
+  if (err.isOperational) {
+    return res.status(err.statusCode).json({
+      status: err.status,
+      message: err.messages,
+    });
+  }
+  //if not operational send a generic message without inforamation (third package libray errors , ....)
   res.status(500).json({
     status: 'Error',
     message: 'Somthing went wrong',
